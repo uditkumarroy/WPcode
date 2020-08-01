@@ -8,17 +8,17 @@ import javax.inject.Inject
 class NetworkMapper @Inject constructor() : EntityMapping<RowNetworkEntity, Row> {
     override fun mapFromEntity(entity: RowNetworkEntity): Row {
         return Row(
-            description = entity.description,
-            imageHref = entity.imageHref,
-            title = entity.title
+            description = "$entity.description",
+            imageHref = "$entity.imageHref",
+            title = "$entity.title"
         )
     }
 
     override fun mapToEntity(domainModel: Row): RowNetworkEntity {
         return RowNetworkEntity(
-            title = domainModel.title,
-            description = domainModel.description,
-            imageHref = domainModel.imageHref
+            title = "$domainModel.title",
+            description = "$domainModel.description",
+            imageHref = "$domainModel.imageHref"
         )
     }
 
