@@ -6,14 +6,17 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
-class MainFragmentFactory @Inject constructor() : FragmentFactory() {
+class MainFragmentFactory @Inject constructor(
+
+    private val someString: Int
+) : FragmentFactory() {
 
     override fun instantiate(classLoader: ClassLoader, className: String): Fragment {
 
         return when (className) {
 
             BlogFragment::class.java.name -> {
-                val fragment = BlogFragment()
+                val fragment = BlogFragment(someString)
                 fragment
             }
 

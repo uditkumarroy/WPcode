@@ -13,9 +13,10 @@ import com.task.utils.DataState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
-class BlogFragment : Fragment(R.layout.fragment_blog) {
+class BlogFragment constructor(private val someString: Int) : Fragment(R.layout.fragment_blog) {
 
     private val TAG = "MainActivity"
 
@@ -26,6 +27,7 @@ class BlogFragment : Fragment(R.layout.fragment_blog) {
         super.onViewCreated(view, savedInstanceState)
         subscribeObserver()
         viewModel.stateEvent(BlogStateEvent.GetBlogsEvent())
+        Log.e(TAG, "Some string:" + someString)
     }
 
     fun subscribeObserver() {

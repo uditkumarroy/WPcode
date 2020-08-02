@@ -6,7 +6,7 @@ import androidx.room.RoomDatabase
 import com.task.repository.local.blogs.room.BlogsDao
 import com.task.repository.local.blogs.room.RowCachedEntity
 
-@Database(entities = [RowCachedEntity::class], version = 1, exportSchema = true)
+@Database(entities = [RowCachedEntity::class], version = 1, exportSchema = false)
 abstract class TaskDataBase : RoomDatabase() {
 
     abstract fun blogDao(): BlogsDao
