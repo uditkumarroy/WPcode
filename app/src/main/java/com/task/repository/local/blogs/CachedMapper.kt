@@ -6,9 +6,10 @@ import com.task.utils.EntityMapping
 import javax.inject.Inject
 
 class CachedMapper @Inject constructor() : EntityMapping<RowCachedEntity, Row> {
+
     override fun mapFromEntity(entity: RowCachedEntity): Row {
         return Row(
-            title = entity.title,
+            title = "${entity.title}",
             description = entity.description,
             imageHref = entity.imageHref
         )
@@ -16,16 +17,13 @@ class CachedMapper @Inject constructor() : EntityMapping<RowCachedEntity, Row> {
 
     override fun mapToEntity(domainModel: Row): RowCachedEntity {
         return RowCachedEntity(
-            title = domainModel.title,
+            title = "${domainModel.title}",
             description = domainModel.description,
             imageHref = domainModel.imageHref
         )
     }
 
-    fun mapFromEntityList(entity: List<RowCachedEntity>): List<Row> {
-        return entity.map {
-            mapFromEntity(it)
-        }
+    fun mapFromEntityList(entities: List<RowCachedEntity>): List<Row> {
+        return entities.map { mapFromEntity(it) }
     }
-
 }

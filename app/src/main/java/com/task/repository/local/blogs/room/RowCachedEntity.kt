@@ -6,16 +6,16 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "Blogs")
-data class RowCachedEntity(
+class RowCachedEntity(
 
     @ColumnInfo(name = "description")
     @Nullable
-    val description: String,
+    var description: String,
     @ColumnInfo(name = "image_href")
     @Nullable
-    val imageHref: String,
+    var imageHref: String,
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "title")
-    val title: String
+    var title: String
 
 )
