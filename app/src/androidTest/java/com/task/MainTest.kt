@@ -82,7 +82,7 @@ class MainTest {
         )
         onView(withId(R.id.recyclerView)).check(matches(isCompletelyDisplayed()))
         // onView(withId(R.id.recyclerView)).perform(actionOnItemAtPosition<BlogViewHolder>(0, click()))
-        onView(withId(R.id.tv_title)).check(matches(withText(BLOGS_IN_TEST.get(0).title)))
+        //onView(withId(R.id.tv_title)).check(matches(withText(BLOGS_IN_TEST.get(0).title)))
     }
 
 
